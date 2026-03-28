@@ -17,7 +17,7 @@ const projectsData: Project[] = [
     problem: 'Complex transaction flows causing user drop-off.',
     solution: 'Simplified 7-step flow to 3 steps using gesture navigation.',
     outcome: '40% faster task completion.',
-    image: 'Assets/ChatGPT Image 28 Mar 2026, 13_31_05.png',
+    image: '/images/image3.png',
     tags: ['Doc Link', 'Mobile', '2025'],
     description: 'A comprehensive medical documentation application that allows healthcare professionals to quickly link patient records, manage transactions, and track medical history on the go.',
     shortDescription: 'Simplified complex medical transactions from a 7-step flow to 3 steps, reducing user drop-off.',
