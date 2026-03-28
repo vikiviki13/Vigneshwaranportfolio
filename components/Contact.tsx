@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Linkedin, ArrowUp, Mail, Phone, ExternalLink } from 'lucide-react';
+import { ArrowUp, Mail, Phone, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }> = ({ char, mouseX, mouseY }) => {
@@ -63,24 +63,33 @@ const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }>
   );
 };
 
-const BehanceIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className }) => (
+const BehanceIcon: React.FC<{ size?: number; className?: string }> = ({ size = 26, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 26 26"
+    className={className}
+  >
+    <path
+      fill="currentColor"
+      d="M19.5 12.4c.2.3.4.6.5 1.1h-3.2c0-.1 0-.3.1-.5s.1-.3.3-.5c.1-.2.3-.3.5-.4s.5-.2.8-.2c.4.1.8.2 1 .5m-9.2-.7c.2-.2.4-.5.4-.9c0-.2 0-.4-.1-.6c-.1-.1-.2-.3-.3-.3c-.1-.1-.3-.1-.5-.2H7.2V12h2.2q.45 0 .9-.3m-.8 1.7H7.2v2.7h2.3c.2 0 .4 0 .6-.1c.2 0 .4-.1.5-.2s.3-.2.4-.4s.1-.4.1-.6c0-.5-.1-.9-.4-1.1q-.45-.3-1.2-.3M26 4.9v16.2c0 2.7-2.2 4.9-4.9 4.9H4.9C2.2 26 0 23.8 0 21.1V4.9C0 2.2 2.2 0 4.9 0h16.2C23.8 0 26 2.2 26 4.9m-9.6 4.7h4v-1h-4zM13.2 15c0-.6-.1-1.1-.4-1.6c-.3-.4-.7-.7-1.3-.9c.4-.2.8-.5 1-.8q.3-.45.3-1.2c0-.75-.1-.8-.2-1.2c-.2-.3-.4-.6-.6-.7c-.3-.2-.6-.3-1-.4c-.5-.2-.9-.2-1.4-.2H5v9.8h4.8c.4 0 .9-.1 1.3-.2s.8-.3 1.1-.5s.6-.5.8-.9c.1-.3.2-.7.2-1.2m3.6-.3h5.1c0-.6 0-1.1-.1-1.6s-.3-1-.6-1.3c-.3-.4-.7-.7-1.1-.9c-.5-.2-1-.4-1.6-.4q-.75 0-1.5.3c-.4.2-.8.5-1.2.8c-.3.3-.6.7-.7 1.2q-.3.75-.3 1.5c0 .75.1 1.1.3 1.5c.2.5.4.9.7 1.2s.7.6 1.1.8q.75.3 1.5.3q1.2 0 2.1-.6c.6-.4 1-1 1.3-1.8h-1.7c-.1.2-.2.4-.5.6s-.6.3-1 .3c-.5 0-1-.1-1.3-.4c-.3-.4-.5-.9-.5-1.5"
+    />
+  </svg>
+);
+
+const LinkedInIcon: React.FC<{ size?: number; className?: string }> = ({ size = 24, className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
     className={className}
   >
-    <path d="M15 11h5" />
-    <path d="M9 12H7.5a1.5 1.5 0 1 0 0 3H9v-3z" />
-    <path d="M9 6H7.5a1.5 1.5 0 1 0 0 3H9V6z" />
-    <path d="M11.5 12c0 3 2.5 3 2.5 3s2.5 0 2.5-3-2.5-3-2.5-3-2.5 0-2.5 3z" />
-    <path d="M3 5c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5z" />
+    <path
+      fill="currentColor"
+      d="M17.303 2.25H6.697A4.447 4.447 0 0 0 2.25 6.697v10.606a4.447 4.447 0 0 0 4.447 4.447h10.606a4.447 4.447 0 0 0 4.447-4.447V6.697a4.447 4.447 0 0 0-4.447-4.447m-8.46 15.742a.4.4 0 0 1-.4.423h-1.78a.41.41 0 0 1-.4-.412V10.6a.4.4 0 0 1 .4-.411h1.78a.4.4 0 0 1 .4.411zM7.52 8.632a1.467 1.467 0 1 1 .022-2.935A1.467 1.467 0 0 1 7.52 8.63m10.817 9.35a.39.39 0 0 1-.378.388H16.08a.39.39 0 0 1-.378-.389v-3.424c0-.511.156-2.223-1.356-2.223c-1.179 0-1.412 1.2-1.457 1.734v3.991a.39.39 0 0 1-.378.39h-1.823a.39.39 0 0 1-.389-.39v-7.493a.39.39 0 0 1 .39-.378h1.822a.39.39 0 0 1 .39.378v.645a2.59 2.59 0 0 1 2.434-1.112c3.035 0 3.024 2.835 3.024 4.447z"
+    />
   </svg>
 );
 
@@ -234,7 +243,7 @@ const Contact: React.FC = () => {
 
           <div className="flex gap-8">
             {[
-              { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/vigneshwaran-v-m-24386b372/?skipRedirect=true' },
+              { name: 'LinkedIn', icon: <LinkedInIcon size={18} />, href: 'https://www.linkedin.com/in/vigneshwaran-v-m-24386b372/?skipRedirect=true' },
               { name: 'Behance', icon: <BehanceIcon size={18} />, href: 'https://www.behance.net/vmvchannel' }
             ].map((social) => (
               <a
