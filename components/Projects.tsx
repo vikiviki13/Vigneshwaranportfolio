@@ -85,7 +85,7 @@ const projectsData: Project[] = [
     problem: 'Confusing analytics for novice traders.',
     solution: 'Simplified charts with predictive insights.',
     outcome: '30% more active daily users.',
-    image: 'Assets/image3.png',
+    image: 'public/images/image3.png',
     tags: ['WebApp', 'Personal', '2026'],
     description: 'An expansive analytics dashboard built to demystify complex data for casual users, bringing high-end predictive insights into an approachable, simplified interface.',
     shortDescription: 'Simplified confusing charts with intuitive, predictive insights for casual users.',
