@@ -103,7 +103,7 @@ const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">PROJECTS</h2>
         </motion.div>
@@ -116,7 +116,7 @@ const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
             key={project.id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
           >

@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="text-6xl md:text-9xl font-bold mb-8 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-700"
           >
             Let's Talk.
@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1 }}
             className="text-neutral-400 max-w-md mx-auto mb-12 text-lg md:text-xl"
           >
@@ -215,7 +215,7 @@ const Contact: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4 md:gap-6"
           >

@@ -8,7 +8,7 @@ const About: React.FC = () => {
             <motion.div 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.8 }}
                 className="bg-neutral-900/30 border border-neutral-800 rounded-3xl p-8 md:p-16 relative overflow-hidden"
             >
@@ -20,7 +20,7 @@ const About: React.FC = () => {
                     <motion.h2 
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="text-sm font-bold text-lime-400 uppercase tracking-widest mb-6"
                     >
                         Philosophy
@@ -36,7 +36,7 @@ const About: React.FC = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ delay: 0.2 }}
                         >
                             <h3 className="text-white font-bold text-xl mb-4">The Process</h3>
@@ -47,7 +47,7 @@ const About: React.FC = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ delay: 0.4 }}
                         >
                             <h3 className="text-white font-bold text-xl mb-4">The Goal</h3>
