@@ -85,7 +85,7 @@ const projectsData: Project[] = [
     problem: 'Confusing analytics for novice traders.',
     solution: 'Simplified charts with predictive insights.',
     outcome: '30% more active daily users.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: 'Assets/ChatGPT Image 28 Mar 2026, 13_31_05.png',
     tags: ['WebApp', 'Personal', '2026'],
     description: 'An expansive analytics dashboard built to demystify complex data for casual users, bringing high-end predictive insights into an approachable, simplified interface.',
     shortDescription: 'Simplified confusing charts with intuitive, predictive insights for casual users.',
