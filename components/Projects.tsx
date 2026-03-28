@@ -29,7 +29,7 @@ const projectsData: Project[] = [
   {
     id: 'p2',
     title: 'Hospital Management',
-    category: 'SAAS Platform',
+    category: 'SaaS Platform',
     role: 'UI/UX Designer',
     problem: 'Data overload for hospital management.',
     solution: 'Modular dashboard with progressive disclosure.',
@@ -46,8 +46,8 @@ const projectsData: Project[] = [
   {
     id: 'p3',
     title: 'Accounts ERP',
-    category: 'SAAS Platform',
-    role: 'UI/UX designer',
+    category: 'SaaS Platform',
+    role: 'UI/UX Designer',
     problem: 'High cart abandonment (75%).',
     solution: 'Single-page checkout with trust signals.',
     outcome: '15% drop in abandonment.',
@@ -80,7 +80,7 @@ const projectsData: Project[] = [
   {
     id: 'p5',
     title: 'Tea Round Pro',
-    category: 'web App',
+    category: 'Web App',
     role: 'AI Product Developer',
     problem: 'Confusing analytics for novice traders.',
     solution: 'Simplified charts with predictive insights.',
@@ -106,7 +106,7 @@ const Projects: React.FC<ProjectsProps> = ({ onOpenProject }) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">PROJECTS</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">WORKS</h2>
         </motion.div>
         <div className="h-[1px] bg-neutral-800 flex-grow ml-8 mb-2 hidden md:block"></div>
       </div>
