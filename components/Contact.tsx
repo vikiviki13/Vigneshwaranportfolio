@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }> = ({ char, mouseX, mouseY }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const distance = useMotionValue(1000);
-  
+
   // Spring for smooth lighting
   const brightness = useSpring(useTransform(distance, [0, 150], [1, 0]), {
     stiffness: 150,
@@ -13,13 +13,13 @@ const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }>
   });
 
   const glowOpacity = useSpring(useTransform(distance, [0, 150], [0.8, 0]), {
-      stiffness: 150,
-      damping: 15
+    stiffness: 150,
+    damping: 15
   });
 
   const yPos = useSpring(useTransform(distance, [0, 150], [-10, 0]), {
-      stiffness: 150,
-      damping: 15
+    stiffness: 150,
+    damping: 15
   });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }>
         const rect = ref.current.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        
+
         const dx = mouseX.get() - centerX;
         const dy = mouseY.get() - centerY;
         const d = Math.sqrt(dx * dx + dy * dy);
@@ -50,7 +50,7 @@ const InteractiveCharacter: React.FC<{ char: string; mouseX: any; mouseY: any }>
   return (
     <motion.span
       ref={ref}
-      style={{ 
+      style={{
         color: textColor,
         y: yPos,
         textShadow: useTransform(glowOpacity, (v) => `0 0 ${v * 40}px rgba(163,230,53,${v})`),
@@ -99,9 +99,9 @@ const ContactButton: React.FC<{
       href={href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      transition={{ 
-        type: "spring", 
-        stiffness: 200, 
+      transition={{
+        type: "spring",
+        stiffness: 200,
         damping: 25,
         mass: 0.5
       }}
@@ -111,14 +111,14 @@ const ContactButton: React.FC<{
         <motion.div layout className="flex-shrink-0">
           {icon}
         </motion.div>
-        
-        <motion.div 
-          layout 
+
+        <motion.div
+          layout
           className="flex items-center overflow-hidden"
-          transition={{ 
-            type: "spring", 
-            stiffness: 200, 
-            damping: 25 
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 25
           }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
@@ -172,8 +172,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <footer 
-      id="contact" 
+    <footer
+      id="contact"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
 
         <div className="flex flex-col items-center text-center mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -193,7 +193,7 @@ const Contact: React.FC = () => {
           >
             Let's Talk.
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -202,21 +202,21 @@ const Contact: React.FC = () => {
           >
             Have a project in mind? Let's build something extraordinary together.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4 md:gap-6"
           >
-            <ContactButton 
+            <ContactButton
               icon={<Mail size={22} />}
               label="Email Me"
               value="vigneshwaranvmece@gmail.com"
               href="mailto:vigneshwaranvmece@gmail.com"
             />
-            <ContactButton 
+            <ContactButton
               icon={<Phone size={22} />}
               label="Call Me"
               value="+91 8220514063"
@@ -237,9 +237,9 @@ const Contact: React.FC = () => {
               { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/vigneshwaran-v-m-24386b372/?skipRedirect=true' },
               { name: 'Behance', icon: <BehanceIcon size={18} />, href: 'https://www.behance.net/vmvchannel' }
             ].map((social) => (
-              <a 
-                key={social.name} 
-                href={social.href} 
+              <a
+                key={social.name}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-neutral-500 hover:text-lime-400 transition-all duration-300 text-sm font-bold uppercase tracking-widest group"
@@ -261,14 +261,14 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center text-neutral-800 text-[10vw] font-bold leading-none select-none uppercase tracking-tighter flex justify-center flex-wrap">
-            {"Vigneshwaran".split("").map((char, index) => (
-              <InteractiveCharacter 
-                key={index}
-                char={char}
-                mouseX={mouseX}
-                mouseY={mouseY}
-              />
-            ))}
+          {"Vigneshwaran".split("").map((char, index) => (
+            <InteractiveCharacter
+              key={index}
+              char={char}
+              mouseX={mouseX}
+              mouseY={mouseY}
+            />
+          ))}
         </div>
 
       </div>
