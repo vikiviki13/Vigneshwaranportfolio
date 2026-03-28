@@ -93,6 +93,8 @@ const LinkedInIcon: React.FC<{ size?: number; className?: string }> = ({ size = 
   </svg>
 );
 
+import { useScrollActive } from '../hooks/useScrollActive';
+
 const ContactButton: React.FC<{
   icon: React.ReactNode;
   label: string;
@@ -101,9 +103,13 @@ const ContactButton: React.FC<{
   colorClass?: string;
 }> = ({ icon, label, value, href, colorClass = "bg-lime-400" }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { ref, isActive } = useScrollActive({ amount: 0.8, margin: "-10% 0px -10% 0px" });
+  
+  const showValue = isHovered || isActive;
 
   return (
     <motion.a
+      ref={ref}
       layout
       href={href}
       onMouseEnter={() => setIsHovered(true)}
@@ -131,7 +137,7 @@ const ContactButton: React.FC<{
           }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
-            {!isHovered ? (
+            {!showValue ? (
               <motion.span
                 key="label"
                 layout
