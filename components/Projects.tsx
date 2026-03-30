@@ -11,21 +11,21 @@ interface ProjectsProps {
 const projectsData: Project[] = [
   {
     id: 'p1',
-    title: 'Doc Link',
+    title: 'Doclink',
     category: 'Mobile App',
-    role: 'Product Designer',
-    problem: 'Complex transaction flows causing user drop-off.',
-    solution: 'Simplified 7-step flow to 3 steps using gesture navigation.',
-    outcome: '40% faster task completion.',
+    role: 'Product Designer & Developer',
+    problem: 'Patients faced difficulty in discovering the right doctors, managing consultations, and maintaining continuity of care due to fragmented systems and complex user flows.',
+    solution: 'Designed a unified healthcare platform that simplifies doctor discovery, appointment booking, real-time consultation, and medical record management into a seamless, intuitive experience.',
+    outcome: 'Reduced booking friction, improved consultation continuity, and enhanced user trust with a simplified flow, leading to faster task completion and better engagement.',
     image: '/images/image3.png',
-    tags: ['Doc Link', 'Mobile', '2025'],
-    description: 'A comprehensive medical documentation application that allows healthcare professionals to quickly link patient records, manage transactions, and track medical history on the go.',
-    shortDescription: 'Simplified complex medical transactions from a 7-step flow to 3 steps, reducing user drop-off.',
-    purpose: 'The name "Doc Link" represents the seamless connection between medical documents and healthcare providers. Its purpose is to eliminate complex transaction flows that previously caused high user drop-off in medical data entry.',
-    duration: '6 Months',
-    coreUsers: 'Doctors, Nurses, and Medical Administrative Staff',
-    tools: ['Figma', 'Sketch', 'InVision']
-  },
+    tags: ['Healthcare', 'Mobile', 'SaaS', '2026'],
+    description: 'Doclink is a comprehensive healthcare platform that enables patients to search nearby doctors, book appointments, consult via chat/audio/video, and maintain medical records in one place. The platform also empowers doctors with tools to manage consultations, share knowledge through content, and streamline patient interactions.',
+    shortDescription: 'A healthcare platform that simplifies doctor discovery, consultation, and medical record management into a seamless user experience.',
+    purpose: 'Doclink is designed to create a continuous connection between patients and doctors by reducing friction in healthcare access, improving communication, and ensuring long-term care through integrated records and consultations.',
+    duration: '2 Months',
+    coreUsers: 'Patients, Doctors, Healthcare Providers',
+    tools: ['Figma', 'React', 'shadcn/ui', 'Tailwind CSS']
+  }
   {
     id: 'p2',
     title: 'Hospital Management',
@@ -39,7 +39,7 @@ const projectsData: Project[] = [
     description: 'An end-to-end hospital administration platform that consolidates patient data, staff scheduling, and inventory management into a single progressive web interface.',
     shortDescription: 'Tackled data overload with a modular dashboard featuring progressive disclosure.',
     purpose: 'Designed to tackle the sheer volume of data overload in modern healthcare facilities, this project aims to provide a progressive disclosure dashboard that only shows administrators what they need, when they need it.',
-    duration: '8 Months',
+    duration: '1 Months',
     coreUsers: 'Hospital Administrators and Department Heads',
     tools: ['React', 'Tailwind CSS', 'Redux', 'Figma']
   },
@@ -90,7 +90,7 @@ const projectsData: Project[] = [
     description: 'TeaRound is a real-time collaborative ordering system that eliminates the friction of group tea breaks. Instead of relying on one person to remember and manage multiple orders, each participant joins a shared session, selects their own items, and contributes to a live-updating order board. The system automatically aggregates orders into a clean summary for the tea shop, reducing errors and improving speed. Built with a mobile-first approach, the product focuses on simplicity, speed, and clarity in high-frequency, real-world scenarios.',
     shortDescription: 'A collaborative tea ordering app that replaces manual order collection with real-time group ordering.',
     purpose: 'TeaRound was built to solve a small but frequent real-world problem—group ordering inefficiency. The goal was to reduce human dependency, eliminate confusion, and create a seamless, shared ordering experience that scales across offices, colleges, and teams.',
-    duration: '3–4 Weeks (MVP)',
+    duration: '1 Week',
     coreUsers: 'Office Teams, College Students, Small Workgroups',
     tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity']
   }
