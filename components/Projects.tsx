@@ -25,7 +25,7 @@ const projectsData: Project[] = [
     duration: '2 Months',
     coreUsers: 'Patients, Doctors, Healthcare Providers',
     tools: ['Figma', 'React', 'shadcn/ui', 'Tailwind CSS']
-  }
+  },
   {
     id: 'p2',
     title: 'Hospital Management',
