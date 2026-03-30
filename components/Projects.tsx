@@ -79,21 +79,20 @@ const projectsData: Project[] = [
   },
   {
     id: 'p5',
-    title: 'Tea Round Pro',
+    title: 'TeaRound',
     category: 'Web App',
     role: 'AI Product Developer',
-    problem: 'Confusing analytics for novice traders.',
-    solution: 'Simplified charts with predictive insights.',
-    outcome: '30% more active daily users.',
-    image: '/images/image3.png',
-    tags: ['WebApp', 'Personal', '2026'],
-
-    description: 'An expansive analytics dashboard built to demystify complex data for casual users, bringing high-end predictive insights into an approachable, simplified interface.',
-    shortDescription: 'Simplified confusing charts with intuitive, predictive insights for casual users.',
-    purpose: 'Originally focused on simplifying charts, "Tea Round Pro" aims to break down confusing analytics for novice traders or casual users, leading to significantly higher daily engagement.',
-    duration: '4 Months',
-    coreUsers: 'Novice Traders, Casual Investors, and Small Business Owners',
-    tools: ['Vue.js', 'D3.js', 'Firebase', 'Netlify']
+    problem: 'Group tea or coffee ordering in offices and colleges is chaotic—one person collects orders, people change requests, items get missed, and the final order becomes inaccurate.',
+    solution: 'Designed and developed a collaborative web app where users join a shared session, select items themselves, and generate a real-time grouped order summary for the tea shop.',
+    outcome: 'Reduced ordering errors and coordination time by over 70%, making group ordering faster, clearer, and more reliable.',
+    image: '/images/tea1.png',
+    tags: ['WebApp', 'SaaS', '2026'],
+    description: 'TeaRound is a real-time collaborative ordering system that eliminates the friction of group tea breaks. Instead of relying on one person to remember and manage multiple orders, each participant joins a shared session, selects their own items, and contributes to a live-updating order board. The system automatically aggregates orders into a clean summary for the tea shop, reducing errors and improving speed. Built with a mobile-first approach, the product focuses on simplicity, speed, and clarity in high-frequency, real-world scenarios.',
+    shortDescription: 'A collaborative tea ordering app that replaces manual order collection with real-time group ordering.',
+    purpose: 'TeaRound was built to solve a small but frequent real-world problem—group ordering inefficiency. The goal was to reduce human dependency, eliminate confusion, and create a seamless, shared ordering experience that scales across offices, colleges, and teams.',
+    duration: '3–4 Weeks (MVP)',
+    coreUsers: 'Office Teams, College Students, Small Workgroups',
+    tools: ['Claude', 'Supabase', 'Antigravity']
   }
 ];
 
