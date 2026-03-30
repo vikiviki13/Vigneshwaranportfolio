@@ -66,16 +66,16 @@ const projectsData: Project[] = [
     category: 'Web App',
     role: 'AI Product Developer',
     problem: 'Need a platform to enter hourly work.',
-    solution: 'Developed task entering system with notification.',
-    outcome: '60% increase in time spent on page.',
-    image: '/images/image4.png',
+    solution: 'Developed task entering system with hourly reminders.',
+    outcome: '98% of users use this webapp daily.',
+    image: '/images/image8.png',
     tags: ['WebApp', 'Personal', '2026'],
     description: 'A smart time-tracking and productivity web application designed to help freelancers and remote workers meticulously log their hourly tasks and manage billing automatically.',
     shortDescription: 'Developed an hourly task entry system with built-in productivity notifications.',
-    purpose: 'Born from a personal need for better task management, "Hourly" serves as a dedicated platform to log hourly work with built-in notification systems to keep developers focused.',
-    duration: '3 Months',
+    purpose: 'Born from a personal need for better task management, "Hourly" serves as a dedicated platform to log hourly work with built-in notification systems to keep employees focused.',
+    duration: '1 Week',
     coreUsers: 'Freelancers, Remote Teams, and Independent Contractors',
-    tools: ['React', 'Node.js', 'MongoDB', 'Supabase']
+    tools: ['Claude', 'Supabase', 'Antigravity']
   },
   {
     id: 'p5',
