@@ -75,7 +75,7 @@ const projectsData: Project[] = [
     purpose: 'Born from a personal need for better task management, "Hourly" serves as a dedicated platform to log hourly work with built-in notification systems to keep employees focused.',
     duration: '1 Week',
     coreUsers: 'Freelancers, Remote Teams, and Independent Contractors',
-    tools: ['Claude', 'Supabase', 'Antigravity']
+    tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity']
   },
   {
     id: 'p5',
@@ -92,7 +92,7 @@ const projectsData: Project[] = [
     purpose: 'TeaRound was built to solve a small but frequent real-world problem—group ordering inefficiency. The goal was to reduce human dependency, eliminate confusion, and create a seamless, shared ordering experience that scales across offices, colleges, and teams.',
     duration: '3–4 Weeks (MVP)',
     coreUsers: 'Office Teams, College Students, Small Workgroups',
-    tools: ['Claude', 'Supabase', 'Antigravity']
+    tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity']
   }
 ];
 
