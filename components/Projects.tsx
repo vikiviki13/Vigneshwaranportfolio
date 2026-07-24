@@ -10,6 +10,24 @@ interface ProjectsProps {
 
 const projectsData: Project[] = [
   {
+    id: 'p6',
+    title: 'IRCTC Website Redesign',
+    category: 'UX Case Study',
+    role: 'UI/UX Designer',
+    problem: 'The existing IRCTC homepage presented booking, navigation, tourism, support, and promotional content with weak hierarchy, inconsistent components, and high visual density.',
+    solution: 'Redesigned the homepage around a booking-first structure with simplified navigation, a prominent train search experience, consistent service cards, clearer travel content, app promotion, and an organised footer.',
+    outcome: 'Created a clearer and more trustworthy travel-booking experience with improved visual hierarchy, content scannability, service discovery, and interface consistency.',
+    image: '/images/image14.png',
+    tags: ['UI/UX', 'Case Study', '2026'],
+    description: 'The IRCTC Website Redesign is an independent UX case study focused on simplifying one of India’s most widely used railway-booking platforms. The original homepage was audited for hierarchy, consistency, readability, cognitive load, and information organisation. The redesigned experience prioritises train search, introduces secondary services progressively, and creates a clearer journey from booking to exploration and support. The interface uses Poppins typography, a focused blue and slate colour system, consistent components, immersive travel imagery, and a responsive layout to deliver a modern yet familiar experience.',
+    shortDescription: 'A booking-first redesign of the IRCTC homepage focused on clarity, trust, consistency, and easier service discovery.',
+    purpose: 'This project was created to explore how a complex public travel platform could be modernised without losing familiarity. The goal was to make train booking the strongest homepage action, reduce visual noise, improve trust, and organise supporting services around clear user priorities.',
+    duration: '1 Weeks',
+    coreUsers: 'Railway Travellers, Occasional Travellers, Older and Less Digitally Confident Users',
+    tools: ['Figma', 'FigJam'],
+    link: 'https://www.behance.net/gallery/253258441/IRCTC-Redesign'
+  },
+  {
     id: 'p1',
     title: 'Doclink',
     category: 'Mobile App',
@@ -111,7 +129,10 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
       className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
     >
       {/* Image - Alternating Order */}
-      <div className={`relative overflow-hidden rounded-2xl aspect-[4/3] border border-neutral-800 bg-neutral-900 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+      <div 
+        onClick={() => onOpenProject(project)}
+        className={`relative overflow-hidden rounded-2xl aspect-[4/3] border border-neutral-800 bg-neutral-900 cursor-pointer ${index % 2 === 1 ? 'lg:order-2' : ''}`}
+      >
         <Parallax offset={30} className="h-full w-full">
           <div className={`absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10 ${isActive ? 'bg-transparent' : ''}`} />
           <img
@@ -131,7 +152,10 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
       <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
         <Parallax offset={20}>
           <div className="flex flex-col gap-6 lg:items-start">
-            <h3 className={`text-3xl md:text-5xl font-bold text-white group-hover:text-lime-400 transition-colors ${isActive ? 'text-lime-400' : ''}`}>
+            <h3 
+              onClick={() => onOpenProject(project)}
+              className={`text-3xl md:text-5xl font-bold text-white group-hover:text-lime-400 transition-colors cursor-pointer ${isActive ? 'text-lime-400' : ''}`}
+            >
               {project.title}
             </h3>
             <p className="text-neutral-400 text-lg leading-relaxed max-w-md">
@@ -157,15 +181,27 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
               ))}
             </div>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpenProject(project);
-              }}
-              className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-sm mt-4 group/btn w-fit"
-            >
-              View Case Study <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
-            </button>
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-sm mt-4 group/btn w-fit cursor-pointer"
+              >
+                View Case Study <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
+              </a>
+            ) : (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenProject(project);
+                }}
+                className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-sm mt-4 group/btn w-fit"
+              >
+                View Case Study <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
+              </button>
+            )}
           </div>
         </Parallax>
       </div>

@@ -16,6 +16,7 @@ export interface Project {
   description?: string;
   shortDescription?: string;
   tools?: string[];
+  link?: string;
 }
 
 export interface SkillItem {

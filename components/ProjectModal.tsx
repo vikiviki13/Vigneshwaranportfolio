@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2 } from 'lucide-react';
+import { X, CheckCircle2, ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -36,12 +36,24 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             <span className="text-lime-400 font-bold text-xs uppercase tracking-widest mb-1 block">{project.category}</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">{project.title}</h2>
           </div>
-          <button 
-            onClick={onClose}
-            className="p-2 bg-neutral-900 hover:bg-neutral-800 rounded-full transition-colors text-neutral-400 hover:text-white"
-          >
-            <X size={24} />
-          </button>
+          <div className="flex items-center gap-3">
+            {project.link && (
+              <a 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-lime-400 hover:bg-lime-300 text-black font-bold rounded-xl transition-colors text-xs uppercase tracking-wider"
+              >
+                View Case Study <ExternalLink size={16} />
+              </a>
+            )}
+            <button 
+              onClick={onClose}
+              className="p-2 bg-neutral-900 hover:bg-neutral-800 rounded-full transition-colors text-neutral-400 hover:text-white"
+            >
+              <X size={24} />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Content */}
@@ -73,6 +85,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 </div>
                 
                 <div className="md:col-span-1 space-y-8">
+                    {project.link && (
+                        <div>
+                            <a 
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-lime-400 hover:bg-lime-300 text-black font-bold rounded-xl transition-colors text-sm uppercase tracking-wider shadow-lg shadow-lime-400/10"
+                            >
+                              View Case Study on Behance <ExternalLink size={18} />
+                            </a>
+                        </div>
+                    )}
+
                     <div className="bg-neutral-900 p-6 rounded-2xl border border-neutral-800">
                         <h3 className="text-sm font-bold text-white mb-4 uppercase tracking-wider">Impact</h3>
                         <div className="flex items-start gap-3">
