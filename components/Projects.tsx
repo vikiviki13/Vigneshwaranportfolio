@@ -12,7 +12,7 @@ const projectsData: Project[] = [
   {
     id: 'p6',
     title: 'IRCTC Website Redesign',
-    category: 'UX Case Study',
+    category: 'Website Redesign',
     role: 'UI/UX Designer',
     problem: 'The existing IRCTC homepage presented booking, navigation, tourism, support, and promotional content with weak hierarchy, inconsistent components, and high visual density.',
     solution: 'Redesigned the homepage around a booking-first structure with simplified navigation, a prominent train search experience, consistent service cards, clearer travel content, app promotion, and an organised footer.',
@@ -43,6 +43,24 @@ const projectsData: Project[] = [
     duration: '2 Months',
     coreUsers: 'Patients, Doctors, Healthcare Providers',
     tools: ['Figma']
+  },
+  {
+    id: 'p4',
+    title: 'Hourly',
+    category: 'Web App',
+    role: 'AI Product Developer',
+    problem: 'Need a platform to enter hourly work.',
+    solution: 'Developed task entering system with hourly reminders.',
+    outcome: '98% of users use this webapp daily.',
+    image: '/images/image8.png',
+    tags: ['WebApp', 'Personal', '2026'],
+    description: 'A smart time-tracking and productivity web application designed to help freelancers and remote workers meticulously log their hourly tasks and manage billing automatically.',
+    shortDescription: 'Developed an hourly task entry system with built-in productivity notifications.',
+    purpose: 'Born from a personal need for better task management, "Hourly" serves as a dedicated platform to log hourly work with built-in notification systems to keep employees focused.',
+    duration: '1 Week',
+    coreUsers: 'Freelancers, Remote Teams, and Independent Contractors',
+    tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity'],
+    link: 'https://hourly-tracker-v1.vercel.app/'
   },
   {
     id: 'p2',
@@ -77,40 +95,6 @@ const projectsData: Project[] = [
     duration: '5 Months',
     coreUsers: 'Accountants, Financial Controllers, and Business Owners',
     tools: ['Figma']
-  },
-  {
-    id: 'p4',
-    title: 'Hourly',
-    category: 'Web App',
-    role: 'AI Product Developer',
-    problem: 'Need a platform to enter hourly work.',
-    solution: 'Developed task entering system with hourly reminders.',
-    outcome: '98% of users use this webapp daily.',
-    image: '/images/image8.png',
-    tags: ['WebApp', 'Personal', '2026'],
-    description: 'A smart time-tracking and productivity web application designed to help freelancers and remote workers meticulously log their hourly tasks and manage billing automatically.',
-    shortDescription: 'Developed an hourly task entry system with built-in productivity notifications.',
-    purpose: 'Born from a personal need for better task management, "Hourly" serves as a dedicated platform to log hourly work with built-in notification systems to keep employees focused.',
-    duration: '1 Week',
-    coreUsers: 'Freelancers, Remote Teams, and Independent Contractors',
-    tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity']
-  },
-  {
-    id: 'p5',
-    title: 'TeaRound',
-    category: 'Web App',
-    role: 'AI Product Developer',
-    problem: 'Group tea or coffee ordering in offices and colleges is chaotic—one person collects orders, people change requests, items get missed, and the final order becomes inaccurate.',
-    solution: 'Designed and developed a collaborative web app where users join a shared session, select items themselves, and generate a real-time grouped order summary for the tea shop.',
-    outcome: 'Reduced ordering errors and coordination time by over 70%, making group ordering faster, clearer, and more reliable.',
-    image: '/images/tea1.png',
-    tags: ['WebApp', 'Personal', '2026'],
-    description: 'TeaRound is a real-time collaborative ordering system that eliminates the friction of group tea breaks. Instead of relying on one person to remember and manage multiple orders, each participant joins a shared session, selects their own items, and contributes to a live-updating order board. The system automatically aggregates orders into a clean summary for the tea shop, reducing errors and improving speed. Built with a mobile-first approach, the product focuses on simplicity, speed, and clarity in high-frequency, real-world scenarios.',
-    shortDescription: 'A collaborative tea ordering app that replaces manual order collection with real-time group ordering.',
-    purpose: 'TeaRound was built to solve a small but frequent real-world problem—group ordering inefficiency. The goal was to reduce human dependency, eliminate confusion, and create a seamless, shared ordering experience that scales across offices, colleges, and teams.',
-    duration: '1 Week',
-    coreUsers: 'Office Teams, College Students, Small Workgroups',
-    tools: ['Claude', 'Supabase', 'Git Hub', 'Antigravity']
   }
 ];
 
@@ -118,6 +102,8 @@ import { useScrollActive } from '../hooks/useScrollActive';
 
 const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (project: Project) => void }> = ({ project, index, onOpenProject }) => {
   const { ref, isActive } = useScrollActive();
+  const isCaseStudy = project.category?.toLowerCase().includes('case study') || project.link?.includes('behance.net');
+  const buttonText = isCaseStudy ? 'View Case Study' : (project.link ? 'View Live Project' : 'View Details');
 
   return (
     <motion.div
@@ -129,7 +115,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
       className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
     >
       {/* Image - Alternating Order */}
-      <div 
+      <div
         onClick={() => onOpenProject(project)}
         className={`relative overflow-hidden rounded-2xl aspect-[4/3] border border-neutral-800 bg-neutral-900 cursor-pointer ${index % 2 === 1 ? 'lg:order-2' : ''}`}
       >
@@ -152,7 +138,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
       <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
         <Parallax offset={20}>
           <div className="flex flex-col gap-6 lg:items-start">
-            <h3 
+            <h3
               onClick={() => onOpenProject(project)}
               className={`text-3xl md:text-5xl font-bold text-white group-hover:text-lime-400 transition-colors cursor-pointer ${isActive ? 'text-lime-400' : ''}`}
             >
@@ -189,7 +175,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
                 onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-sm mt-4 group/btn w-fit cursor-pointer"
               >
-                View Case Study <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
+                {buttonText} <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
               </a>
             ) : (
               <button
@@ -199,7 +185,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; onOpenProject: (p
                 }}
                 className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-sm mt-4 group/btn w-fit"
               >
-                View Case Study <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
+                {buttonText} <ArrowUpRight className={`group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-lime-400 ${isActive ? 'translate-x-1 -translate-y-1' : ''}`} size={18} />
               </button>
             )}
           </div>

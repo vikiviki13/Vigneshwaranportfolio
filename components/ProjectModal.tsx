@@ -21,6 +21,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
   if (!isOpen || !project) return null;
 
+  const isBehance = project.link?.includes('behance.net');
+  const isCaseStudy = project.category?.toLowerCase().includes('case study') || isBehance;
+  const headerLinkLabel = isCaseStudy ? 'View Case Study' : 'View Live Project';
+  const sidebarLinkLabel = isBehance 
+    ? 'View Case Study on Behance' 
+    : (isCaseStudy ? 'View Case Study' : 'Visit Live Web App');
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
       <div 
@@ -44,7 +51,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-lime-400 hover:bg-lime-300 text-black font-bold rounded-xl transition-colors text-xs uppercase tracking-wider"
               >
-                View Case Study <ExternalLink size={16} />
+                {headerLinkLabel} <ExternalLink size={16} />
               </a>
             )}
             <button 
@@ -93,7 +100,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                               rel="noopener noreferrer"
                               className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-lime-400 hover:bg-lime-300 text-black font-bold rounded-xl transition-colors text-sm uppercase tracking-wider shadow-lg shadow-lime-400/10"
                             >
-                              View Case Study on Behance <ExternalLink size={18} />
+                              {sidebarLinkLabel} <ExternalLink size={18} />
                             </a>
                         </div>
                     )}
