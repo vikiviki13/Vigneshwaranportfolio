@@ -52,7 +52,7 @@ const projectsData: Project[] = [
     problem: 'Need a platform to enter hourly work.',
     solution: 'Developed task entering system with hourly reminders.',
     outcome: '98% of users use this webapp daily.',
-    image: '/images/image8.png',
+    image: '/images/image15.png',
     tags: ['WebApp', 'Personal', '2026'],
     description: 'A smart time-tracking and productivity web application designed to help freelancers and remote workers meticulously log their hourly tasks and manage billing automatically.',
     shortDescription: 'Developed an hourly task entry system with built-in productivity notifications.',
